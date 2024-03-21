@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clsge5kfy3ifq"
-path="res://.godot/imported/gradient_plasma.png-fb69ea65141ddf4549701f0d039d17da.ctex"
+uid="uid://kkcuyo6j66v4"
+path="res://.godot/imported/monochrome_tilemap.png-572713802018e3b2b14e549ca87ef24d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gradient_plasma.png"
-dest_files=["res://.godot/imported/gradient_plasma.png-fb69ea65141ddf4549701f0d039d17da.ctex"]
+source_file="res://assets/onebit/monochrome_tilemap.png"
+dest_files=["res://.godot/imported/monochrome_tilemap.png-572713802018e3b2b14e549ca87ef24d.ctex"]
 
 [params]
 

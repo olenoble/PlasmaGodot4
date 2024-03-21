@@ -99,10 +99,10 @@ func _generate_all_precalculated_vector():
 func _process(delta):
 	# this is where we update the tilemap
 	
-	# if we press space - we reset all the waves
-	if Input.is_physical_key_pressed(KEY_SPACE):
-		_generate_all_parameters()
-	
+	## if we press space - we reset all the waves
+	#if Input.is_physical_key_pressed(KEY_SPACE):
+		#_generate_all_parameters()
+	#
 	var val
 	var phase_trig = [cos(phase), sin(phase)]
 	var atl_pos = Vector2i(0, 0)
