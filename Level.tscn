@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dalmuwvcus51t"]
+[gd_scene load_steps=8 format=3 uid="uid://dalmuwvcus51t"]
 
 [ext_resource type="Texture2D" uid="uid://bbpfsmq8t43pa" path="res://assets/onebit/monochrome_tilemap_transparent_packed.png" id="1_188ax"]
 [ext_resource type="PackedScene" uid="uid://cp13lxjjd5sea" path="res://scenes/player/player.tscn" id="2_mgumf"]
 [ext_resource type="PackedScene" uid="uid://pfjv01glv7j5" path="res://scenes/plasma/Plasma.tscn" id="3_pos2a"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="4_iwfxt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ru1tm"]
 
@@ -602,6 +603,7 @@ texture = ExtResource("1_188ax")
 11:9/0 = 0
 11:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:9/0/physics_layer_0/angular_velocity = 0.0
+11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4, -8, -4)
 12:9/0 = 0
 12:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:9/0/physics_layer_0/angular_velocity = 0.0
@@ -1235,7 +1237,9 @@ sources/1 = SubResource("TileSetAtlasSource_u8atf")
 
 [node name="Level" type="Node2D"]
 
-[node name="PlasmaWorld" parent="." instance=ExtResource("3_pos2a")]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="PlasmaWorld" parent="ParallaxBackground" instance=ExtResource("3_pos2a")]
 modulate = Color(0.47451, 0.47451, 0.47451, 1)
 
 [node name="Playground" type="TileMap" parent="."]
@@ -1247,3 +1251,14 @@ layer_0/tile_data = PackedInt32Array(59, 589825, 4, 58, 524289, 4, 57, 524289, 4
 
 [node name="Player" parent="." instance=ExtResource("2_mgumf")]
 position = Vector2(32, 392)
+move_speed = 300
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(600, 400)
+offset = Vector2(0, 4)
+limit_left = 0
+limit_top = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("4_iwfxt")

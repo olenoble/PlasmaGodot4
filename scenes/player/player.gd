@@ -27,13 +27,13 @@ func _physics_process(delta: float) -> void:
 		jump_count = 0
 
 	# check user input and adjust horizontal velocity
-	var moving = false
+	#var moving = false
 	if Input.is_action_pressed("move_right"):
 		velocity.x += move_speed
-		moving = true
+		#moving = true
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= move_speed
-		moving = true
+		#moving = true
 	
 	# are we jumping ? or jumping again ?
 	if Input.is_action_just_pressed("jump") and (jump_count < max_jump_count):

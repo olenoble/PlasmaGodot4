@@ -28,27 +28,27 @@ func _ready():
 	
 	# godot 4 has changed a lot of things... 
 	num_tiles = tileset.get_source(0).get_tiles_count()
-	print("Using " + str(num_tiles) + " tiles")
+	#print("Using " + str(num_tiles) + " tiles")
 	
 	# why is this so convoluted to work out the shape of the atlas
 	atlas_col_num = tileset.get_source(0).get_tile_id(num_tiles-1).x + 1
 	
 	cell_size = tileset.get_tile_size()[0]
-	print("Tile Size = " + str(cell_size))
+	#print("Tile Size = " + str(cell_size))
 	
 	var window_size = get_window().get_size()
 	needed_tiles = [floor(window_size[0] / cell_size), floor(window_size[1] / cell_size)]
-	print("Number of required tiles = " + str(needed_tiles))
+	#print("Number of required tiles = " + str(needed_tiles))
 	
 	# first generate waves parameters
 	all_parameters.clear()
 	all_parameters.resize(number_wave)
 	_generate_all_parameters()
-	print("Done generating")
+	#print("Done generating")
 
 
 func _generate_all_parameters():
-	print("Regenerating All")
+	#print("Regenerating All")
 	# generate all waves parameters
 	all_parameters.clear()
 	for _i in range(number_wave):
@@ -60,7 +60,7 @@ func _generate_one_parameters():
 	var x = range(number_wave)
 	x.shuffle()
 	var param_ref = x[0]
-	print("Regenerating wave number " + str(param_ref))
+	#print("Regenerating wave number " + str(param_ref))
 	all_parameters[param_ref] = _generate_wave_parameters()
 	_generate_all_precalculated_vector()
 
