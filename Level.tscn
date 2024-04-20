@@ -10,12 +10,13 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="PlasmaWorld" parent="ParallaxBackground" instance=ExtResource("3_pos2a")]
-modulate = Color(0.47451, 0.47451, 0.47451, 1)
+modulate = Color(0.470588, 0.470588, 0.470588, 1)
 
 [node name="Playground" parent="." instance=ExtResource("2_7bqmf")]
+modulate = Color(0.678431, 0.972549, 0.470588, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_mgumf")]
-position = Vector2(32, 392)
+position = Vector2(48, 392)
 move_speed = 300
 
 [node name="Camera2D" type="Camera2D" parent="."]
