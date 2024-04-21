@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var number_wave = 11
+@export var number_wave = 1
 @export var length_range = Vector2(1.0 / 500.0, 1.0 / 50.0)
 @export var angle_range = Vector2(0, 2 * PI)
 @export var zero_phase_range = Vector2(- 1.0 / 50.0, 1.0 / 50.0)
@@ -21,6 +21,7 @@ var precalc_vec = []
 func _ready():
 	randomize()
 	
+	print(number_wave)
 	# get info on tiles (number, size and how many needed for our window)
 	tilemap = get_node("PlasmaTiles")
 	
@@ -37,7 +38,7 @@ func _ready():
 	#print("Tile Size = " + str(cell_size))
 	
 	var window_size = get_window().get_size()
-	needed_tiles = [floor(window_size[0] / cell_size), floor(window_size[1] / cell_size)]
+	needed_tiles = [floor(window_size[0] / cell_size) + 1, floor(window_size[1] / cell_size) + 1]
 	#print("Number of required tiles = " + str(needed_tiles))
 	
 	# first generate waves parameters
